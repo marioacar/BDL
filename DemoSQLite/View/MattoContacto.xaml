@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:model="clr-namespace:DemoSQLite.Model"
+             x:Class="DemoSQLite.View.MattoContacto"
+             Title="MANTENIMIENTO CONTACTO"
+             BackgroundColor="LightGray"
+             x:Name="this">
+    
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White" Margin="10,10" 
+                     BindingContext="{Binding BindingContext.Contacto , Source={x:Reference this}}"
+                     x:DataType="model:Contacto">
+            <Grid RowDefinitions="auto,auto,auto,auto,auto,auto,*,auto" ColumnDefinitions="auto,*">
+                <Image Source="{Binding Avatar}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+                <Label Text="Nombre" Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center"/>
+                <Entry Text="{Binding Nombre}" Grid.Row="1" Grid.Column="1"/>
+                <Label Grid.Row="2" Grid.Column="0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Apellido"/>
+                            <Span Text="{x:Static system:Environment.NewLine}"/>
+                            <Span Text="Paterno"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Entry Text="{Binding ApellidoPaterno}" Grid.Row="2" Grid.Column="1"/>
+                <Label Grid.Row="3" Grid.Column="0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Apellido"/>
+                            <Span Text="{x:Static system:Environment.NewLine}"/>
+                            <Span Text="Materno"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Entry Text="{Binding ApellidoMaterno}" Grid.Row="3" Grid.Column="1"/>
+                <Label Text="Email" Grid.Row="4" Grid.Column="0" VerticalTextAlignment="Center"/>
+                <Entry Text="{Binding Email}" Grid.Row="4" Grid.Column="1"/>
+                <Label Text="Fecha" Grid.Row="5" Grid.Column="0"/>
+                <DatePicker Date="{Binding ActaNacimiento.FechaNacimiento}" Grid.Row="5" Grid.Column="1"/>
+
+                <StackLayout Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" 
+                         VerticalOptions="EndAndExpand" HorizontalOptions="End">
+                    <Button Text="CANCELAR" BackgroundColor="Red" TextColor="White" HorizontalOptions="End"/>
+                    <Button Text="GRABAR" 
+                        BackgroundColor="Blue" 
+                        TextColor="White" 
+                        HorizontalOptions="End"
+                        Command="{Binding BindingContext.cmdGrabaContacto , Source={x:Reference this}}"
+                        CommandParameter="{Binding .}"/>
+                </StackLayout>
+            </Grid>
+            
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
