@@ -4,7 +4,7 @@
              xmlns:system="clr-namespace:System;assembly=mscorlib"
              xmlns:model="clr-namespace:DemoSQLite.Model"
              x:Class="DemoSQLite.View.MattoContacto"
-             Title="MANTENIMIENTO Libro"
+             Title="AGREGAR LIBRO NUEVO"
              BackgroundColor="LightGray"
              x:Name="this">
     
@@ -58,6 +58,16 @@
                     </Label.FormattedText>
                 </Label>
 
+                <DatePicker Date="{Binding  FechaPublicacion.Publicacion}" Grid.Row="5" Grid.Column="1"/>
+                <Label Grid.Row="5" Grid.Column="0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="FechaPublicacion"/>
+                            <Span Text="{x:Static system:Environment.NewLine}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
 
 
 
@@ -66,7 +76,7 @@
                          VerticalOptions="EndAndExpand" HorizontalOptions="End">
                     <Button Text="CANCELAR" BackgroundColor="Red" TextColor="White" HorizontalOptions="End"/>
                     <Button Text="GRABAR" 
-                        BackgroundColor="Blue" 
+                        BackgroundColor="Green" 
                         TextColor="White" 
                         HorizontalOptions="End"
                         Command="{Binding BindingContext.cmdGrabaContacto , Source={x:Reference this}}"

@@ -8,9 +8,9 @@
              x:Name="this">
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal">
-            <Label Text="CONTACTOS" TextColor="White" 
-                   HorizontalOptions="FillAndExpand"/>
-            <Label Text="+" 
+            <Label Text="LIBROS" TextColor="White" 
+                   HorizontalOptions="FillAndExpand" FontSize="Large"/>
+            <Label Text="X" 
                    TextColor="White"
                    FontSize="Large"
                    Margin="0,0,15,0">
@@ -52,6 +52,10 @@
                                             <Span Text="Autor"/>
                                             <Span Text="{x:Static system:Environment.NewLine}"/>
                                             <Span Text="{Binding Titulo}" FontAttributes="Bold"/>
+                                            <Span Text="{x:Static system:Environment.NewLine}"/>
+                                            <Span Text="Fecha de Publicacion"/>
+                                            <Span Text="{x:Static system:Environment.NewLine}"/>
+                                            <Span Text="{Binding FechaPublicacion.Publicacion}" FontAttributes="Bold"/>
                                             <Span Text="{x:Static system:Environment.NewLine}"/>
                                         </FormattedString>
                                     </Label.FormattedText>
