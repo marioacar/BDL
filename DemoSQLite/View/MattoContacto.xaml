@@ -37,9 +37,7 @@
                 </Label>
                 <Entry Text="{Binding Autor}" Grid.Row="3" Grid.Column="1"/>
                 <Label Text="Email" Grid.Row="4" Grid.Column="0" VerticalTextAlignment="Center"/>
-                <Entry Text="{Binding Email}" Grid.Row="4" Grid.Column="1"/>
-                <Label Text="Fecha" Grid.Row="5" Grid.Column="0"/>
-                <DatePicker Date="{Binding ActaNacimiento.FechaNacimiento}" Grid.Row="5" Grid.Column="1"/>
+             
 
                 <StackLayout Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" 
                          VerticalOptions="EndAndExpand" HorizontalOptions="End">

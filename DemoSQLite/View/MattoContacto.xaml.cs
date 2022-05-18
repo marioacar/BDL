@@ -14,10 +14,10 @@ namespace DemoSQLite.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MattoContacto : ContentPage
     {
-        public MattoContacto(Contacto contacto)
+        public MattoContacto(Libro libro)
         {
             InitializeComponent();
-            BindingContext = new MattoContactoViewModel(contacto);
+            BindingContext = new MattoLibroViewModel(libro);
 
 
         }

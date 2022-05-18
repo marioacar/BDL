@@ -22,7 +22,7 @@
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <Grid RowDefinitions="*" ColumnDefinitions="*">
-            <CollectionView ItemsSource="{Binding Libro}" 
+            <CollectionView ItemsSource="{Binding Libros}" 
                             BackgroundColor="White"
                             Margin="5,5">
                 <CollectionView.ItemTemplate>

@@ -28,20 +28,20 @@ namespace DemoSQLite.ViewMode
 
         }
 
-        private void cmdModifcaContactoMetodo(Libro contacto)
+        private void cmdModifcaContactoMetodo(Libro libro)
         {
-            App.Current.MainPage.Navigation.PushAsync(new MattoContacto(L));
+            App.Current.MainPage.Navigation.PushAsync(new MattoContacto(libro));
         }
 
         private void cmdAgregaContactoMetodo()
         {
 
             Libro libro = new Faker<Libro>()
-                .RuleFor(c => c.Avatar, f => f.Person.Avatar)
-                .RuleFor(c => c.Nombre, f => f.Name.FirstName())
-                .RuleFor(c => c.ApellidoPaterno, f => f.Name.LastName())
-                .RuleFor(c => c.ApellidoMaterno, f => f.Name.LastName())
-                .RuleFor(c => c.Email, (f, c) => f.Internet.Email(c.Nombre, c.ApellidoPaterno)).Generate();
+                //.RuleFor(c => c.Avatar, f => f.Person.Avatar)
+                .RuleFor(c => c.Titulo, f => f.Name.FirstName())
+                .RuleFor(c => c.Descripcion, f => f.Name.LastName())
+                .RuleFor(c => c.Autor, f => f.Name.LastName());
+                //.RuleFor(c => c.Editorial, f => f.Name.Fullname())
 
             Random rnd = new Random();
             DateTime datetoday = DateTime.Now;
@@ -54,7 +54,7 @@ namespace DemoSQLite.ViewMode
 
             Debug.WriteLine($"FECHA ALEATORIA {generateDate}");
 
-            libro.FechaPublicacion = new FechaPublicacion() { FechaPublicacion = generateDate };
+            libro.FechaPublicacion = new FechaPublicacion() { Publicacion = generateDate };
 
 
 
