@@ -5,11 +5,11 @@ using System.Text;
 
 namespace DemoSQLite.Model
 {
-    [Table("ActasNacimiento")]
-    public class ActaNacimiento
+   [Table("FechasPublicacion")]
+   public class FechaPublicacion
     {
-        [PrimaryKey,AutoIncrement]
+        [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-        public DateTime FechaNacimiento { get; set; }
+        public DateTime Publicacion { get; set; }
     }
 }

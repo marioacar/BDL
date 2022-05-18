@@ -10,30 +10,30 @@ namespace DemoSQLite
     {
 
         #region Repository
-        private static ContactoRespository _ContactoDb;
-        public static ContactoRespository ContactoDb
+        private static FechaPublicacionRepo _FechaPublicacionDb;
+        public static FechaPublicacionRepo FechaPublicacionDb
         {
             get
             {
-                if (_ContactoDb == null)
+                if (_FechaPublicacionDb == null)
                 {
-                    _ContactoDb = new ContactoRespository();
+                    _FechaPublicacionDb = new FechaPublicacionRepo();
                 }
-                return _ContactoDb;
+                return _FechaPublicacionDb;
 
             }
         }
 
-        private static ActaNacimientoRespository _ActaNacimientoDb;
-        public static ActaNacimientoRespository ActaNacimientoDb
+        private static LibroRepo _LibroDb;
+        public static LibroRepo LibroDb
         {
             get
             {
-                if (_ActaNacimientoDb == null)
+                if (_LibroDb == null)
                 {
-                    _ActaNacimientoDb = new ActaNacimientoRespository();
+                    _LibroDb = new LibroRepo();
                 }
-                return _ActaNacimientoDb;
+                return _LibroDb;
 
             }
         }
@@ -45,8 +45,8 @@ namespace DemoSQLite
 
             InitializeComponent();
 
-            ActaNacimientoDb.Init();
-            ContactoDb.Init();
+            FechaPublicacionDb.Init();
+            LibroDb.Init();
 
             MainPage = new NavigationPage(new Inicio());
         }

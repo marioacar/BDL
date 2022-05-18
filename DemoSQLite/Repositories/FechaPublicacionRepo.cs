@@ -6,59 +6,59 @@ using System.Text;
 
 namespace DemoSQLite.Repositories
 {
-    public class ActaNacimientoRespository
+     public class FechaPublicacionRepo
     {
-
         SQLiteConnection connection;
 
-        public ActaNacimientoRespository()
+        public FechaPublicacionRepo()
         {
             connection = new SQLiteConnection(Constants.Constants.DatabasePath, Constants.Constants.Flags);
-            connection.CreateTable<ActaNacimiento>();
+            connection.CreateTable<FechaPublicacion>();
         }
 
 
         public void Init()
         {
-            connection.CreateTable<ActaNacimiento>();
+            connection.CreateTable<FechaPublicacion>();
         }
-        public void InsertOrUpdate(ActaNacimiento acta)
+        public void InsertOrUpdate(FechaPublicacion acta)
         {
             if (acta.Id == 0)
             {
-               
+
                 connection.Insert(acta);
-               
+
             }
             else
             {
-           
+
                 connection.Update(acta);
-               
+
             }
         }
 
-        public ActaNacimiento GetById(int Id)
+        public FechaPublicacion GetById(int Id)
         {
-            return connection.Table<ActaNacimiento>().FirstOrDefault(item => item.Id == Id);
+            return connection.Table<FechaPublicacion>().FirstOrDefault(item => item.Id == Id);
             //return connection.GetAllWithChildren<Contacto>(item => item.Id == Id).FirstOrDefault();
 
 
 
         }
 
-        public List<ActaNacimiento> GetAll()
+        public List<FechaPublicacion> GetAll()
         {
 
-            return connection.Table<ActaNacimiento>().ToList();
+            return connection.Table<FechaPublicacion>().ToList();
         }
 
 
         public void DeleteItem(int Id)
         {
-            ActaNacimiento acta = GetById(Id);
+            FechaPublicacion acta = GetById(Id);
             connection.Delete(acta);
         }
 
     }
 }
+
