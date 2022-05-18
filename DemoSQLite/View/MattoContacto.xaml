@@ -12,32 +12,55 @@
         <StackLayout BackgroundColor="White" Margin="10,10" 
                      BindingContext="{Binding BindingContext.Libro , Source={x:Reference this}}"
                      x:DataType="model:Libro">
-            <Grid RowDefinitions="auto,auto,auto,auto,auto,auto,*,auto" ColumnDefinitions="auto,*">
+            <Grid RowDefinitions="auto,auto,auto,auto,auto,auto,*,auto,auto" ColumnDefinitions="auto,*">
                 <!--<Image Source="{Binding Avatar}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>-->
                 <Label Text="Titulo" Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center"/>
                 <Entry Text="{Binding Titulo}" Grid.Row="1" Grid.Column="1"/>
+                <Label Grid.Row="1" Grid.Column="0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                           
+                            <Span Text="{x:Static system:Environment.NewLine}"/>
+                         
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Entry Text="{Binding Editorial}" Grid.Row="2" Grid.Column="1"/>
                 <Label Grid.Row="2" Grid.Column="0">
                     <Label.FormattedText>
                         <FormattedString>
-                            <Span Text="Editoria"/>
+                            <Span Text="Editorial"/>
                             <Span Text="{x:Static system:Environment.NewLine}"/>
-                            <Span Text="Paterno"/>
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
-                <Entry Text="{Binding Descripcion}" Grid.Row="2" Grid.Column="1"/>
+
+                <Entry Text="{Binding Descripcion}" Grid.Row="3" Grid.Column="1"/>
                 <Label Grid.Row="3" Grid.Column="0">
                     <Label.FormattedText>
                         <FormattedString>
-                            <Span Text="Apellido"/>
+                            <Span Text="Descripcion"/>
                             <Span Text="{x:Static system:Environment.NewLine}"/>
-                            <Span Text="Materno"/>
+
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
-                <Entry Text="{Binding Autor}" Grid.Row="3" Grid.Column="1"/>
-                <Label Text="Email" Grid.Row="4" Grid.Column="0" VerticalTextAlignment="Center"/>
-             
+
+                <Entry Text="{Binding Autor}" Grid.Row="4" Grid.Column="1"/>
+                <Label Grid.Row="4" Grid.Column="0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Descripcion"/>
+                            <Span Text="{x:Static system:Environment.NewLine}"/>
+
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+
+
+
 
                 <StackLayout Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" 
                          VerticalOptions="EndAndExpand" HorizontalOptions="End">
