@@ -35,7 +35,7 @@ namespace DemoSQLite.Repositories
             {
                 Debug.WriteLine($"Id antes de actualizar {Libro.Id}");
                 connection.Update(Libro);
-                App.FechaPublicacionDb.InsertOrUpdate(Libro.fechaPublicacion);
+                App.FechaPublicacionDb.InsertOrUpdate(Libro.FechaPublicacion);
                 Debug.WriteLine($"Id despues de actualizar {Libro.Id}");
             }
         }

@@ -4,28 +4,28 @@
              xmlns:system="clr-namespace:System;assembly=mscorlib"
              xmlns:model="clr-namespace:DemoSQLite.Model"
              x:Class="DemoSQLite.View.MattoContacto"
-             Title="MANTENIMIENTO CONTACTO"
+             Title="MANTENIMIENTO Libro"
              BackgroundColor="LightGray"
              x:Name="this">
     
     <ContentPage.Content>
         <StackLayout BackgroundColor="White" Margin="10,10" 
-                     BindingContext="{Binding BindingContext.Contacto , Source={x:Reference this}}"
-                     x:DataType="model:Contacto">
+                     BindingContext="{Binding BindingContext.Libro , Source={x:Reference this}}"
+                     x:DataType="model:Libro">
             <Grid RowDefinitions="auto,auto,auto,auto,auto,auto,*,auto" ColumnDefinitions="auto,*">
-                <Image Source="{Binding Avatar}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
-                <Label Text="Nombre" Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center"/>
-                <Entry Text="{Binding Nombre}" Grid.Row="1" Grid.Column="1"/>
+                <!--<Image Source="{Binding Avatar}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>-->
+                <Label Text="Titulo" Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center"/>
+                <Entry Text="{Binding Titulo}" Grid.Row="1" Grid.Column="1"/>
                 <Label Grid.Row="2" Grid.Column="0">
                     <Label.FormattedText>
                         <FormattedString>
-                            <Span Text="Apellido"/>
+                            <Span Text="Editoria"/>
                             <Span Text="{x:Static system:Environment.NewLine}"/>
                             <Span Text="Paterno"/>
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
-                <Entry Text="{Binding ApellidoPaterno}" Grid.Row="2" Grid.Column="1"/>
+                <Entry Text="{Binding Descripcion}" Grid.Row="2" Grid.Column="1"/>
                 <Label Grid.Row="3" Grid.Column="0">
                     <Label.FormattedText>
                         <FormattedString>
@@ -35,7 +35,7 @@
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
-                <Entry Text="{Binding ApellidoMaterno}" Grid.Row="3" Grid.Column="1"/>
+                <Entry Text="{Binding Autor}" Grid.Row="3" Grid.Column="1"/>
                 <Label Text="Email" Grid.Row="4" Grid.Column="0" VerticalTextAlignment="Center"/>
                 <Entry Text="{Binding Email}" Grid.Row="4" Grid.Column="1"/>
                 <Label Text="Fecha" Grid.Row="5" Grid.Column="0"/>

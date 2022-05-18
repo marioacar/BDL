@@ -22,32 +22,32 @@
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <Grid RowDefinitions="*" ColumnDefinitions="*">
-            <CollectionView ItemsSource="{Binding Contactos}" 
+            <CollectionView ItemsSource="{Binding Libro}" 
                             BackgroundColor="White"
                             Margin="5,5">
                 <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="model:Contacto">
+                    <DataTemplate x:DataType="model:Libro">
                         <Grid RowDefinitions="100,auto" ColumnDefinitions="100.,*">
-                            <Image Source="{Binding Avatar}"   Grid.Row="0" Grid.RowSpan="2" Grid.Column="0"
+                            <!--<Image Source="{Binding Avatar}"   Grid.Row="0" Grid.RowSpan="2" Grid.Column="0"
                                    HeightRequest="60" 
                                    WidthRequest="60" 
                                    Aspect="AspectFit"
-                                   Margin="5,0,0,0"/>
+                                   Margin="5,0,0,0"/>-->
                             <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
                                 <Label >
                                     <Label.FormattedText>
                                         <FormattedString>
                                             <Span Text="Nombre"/>
                                             <Span Text="{x:Static system:Environment.NewLine}"/>
-                                            <Span Text="{Binding Nombre}" FontAttributes="Bold"/>
+                                            <Span Text="{Binding Titulo}" FontAttributes="Bold"/>
                                             <Span Text=" "/>
-                                            <Span Text="{Binding ApellidoPaterno}" />
+                                            <Span Text="{Binding Editorial}" />
                                             <Span Text=" "/>
-                                            <Span Text="{Binding ApellidoMaterno}" />
+                                            <Span Text="{Binding Descripcion}" />
                                             <Span Text="{x:Static system:Environment.NewLine}"/>
                                             <Span Text="Email"  />
                                             <Span Text="{x:Static system:Environment.NewLine}"/>
-                                            <Span Text="{Binding Email}" />
+                                            <Span Text="{Binding Autor}" />
                                         </FormattedString>
                                     </Label.FormattedText>
                                 </Label>

@@ -15,28 +15,28 @@ namespace DemoSQLite.ViewMode
     public class InicioViewModel : BaseViewModel
     {
         
-        public ObservableCollection<Contacto> Contactos { get; set; }
+        public ObservableCollection<Libro> Libros { get; set; }
 
         public ICommand cmdAgregaContacto { get; set; }
         public ICommand cmdModifcaContacto { get; set; }
 
         public InicioViewModel()
         {
-            Contactos = new ObservableCollection<Contacto>();
+            Libros = new ObservableCollection<Libro>();
             cmdAgregaContacto = new Command(() => cmdAgregaContactoMetodo());
-            cmdModifcaContacto = new Command<Contacto>((item) => cmdModifcaContactoMetodo(item));
+            cmdModifcaContacto = new Command<Libro>((item) => cmdModifcaContactoMetodo(item));
 
         }
 
-        private void cmdModifcaContactoMetodo(Contacto contacto)
+        private void cmdModifcaContactoMetodo(Libro contacto)
         {
-            App.Current.MainPage.Navigation.PushAsync(new MattoContacto(contacto));
+            App.Current.MainPage.Navigation.PushAsync(new MattoContacto(L));
         }
 
         private void cmdAgregaContactoMetodo()
         {
 
-            Contacto contacto = new Faker<Contacto>()
+            Libro libro = new Faker<Libro>()
                 .RuleFor(c => c.Avatar, f => f.Person.Avatar)
                 .RuleFor(c => c.Nombre, f => f.Name.FirstName())
                 .RuleFor(c => c.ApellidoPaterno, f => f.Name.LastName())
@@ -54,26 +54,26 @@ namespace DemoSQLite.ViewMode
 
             Debug.WriteLine($"FECHA ALEATORIA {generateDate}");
 
-            contacto.ActaNacimiento = new ActaNacimiento() { FechaNacimiento = generateDate };
+            libro.FechaPublicacion = new FechaPublicacion() { FechaPublicacion = generateDate };
 
 
 
 
-            App.Current.MainPage.Navigation.PushAsync(new MattoContacto(contacto));
+            App.Current.MainPage.Navigation.PushAsync(new MattoContacto(libro));
 
         }
 
         public void GetAll()
 
         {
-            if (Contactos != null)
+            if (Libros != null)
             {
-                Contactos.Clear();
-                App.ContactoDb.GetAll().ForEach(item => Contactos.Add(item));
+                Libros.Clear();
+                App.LibrosDb.GetAll().ForEach(item => Libros.Add(item));
             }
             else
             {
-                Contactos = new ObservableCollection<Contacto>(App.ContactoDb.GetAll());
+                Libros = new ObservableCollection<Libro>(App.LibrosDb.GetAll());
 
             }
             OnPropertyChanged();

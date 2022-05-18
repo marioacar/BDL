@@ -25,7 +25,7 @@ namespace DemoSQLite
         }
 
         private static LibroRepo _LibroDb;
-        public static LibroRepo LibroDb
+        public static LibroRepo LibrosDb
         {
             get
             {
@@ -46,7 +46,7 @@ namespace DemoSQLite
             InitializeComponent();
 
             FechaPublicacionDb.Init();
-            LibroDb.Init();
+            LibrosDb.Init();
 
             MainPage = new NavigationPage(new Inicio());
         }

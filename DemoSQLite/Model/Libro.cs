@@ -21,6 +21,6 @@ namespace DemoSQLite.Model
         public int FKFechaPublicacion { get; set; }
 
         [OneToOne(CascadeOperations = CascadeOperation.All)]
-        public FechaPublicacion fechaPublicacion { get; set; }
+        public FechaPublicacion FechaPublicacion { get; set; }
     }
 }
